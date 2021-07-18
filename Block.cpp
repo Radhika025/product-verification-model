@@ -1,11 +1,10 @@
-
-
 #include "Block.h"
 #include "sha256.h"
 #include<ctime>
-Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn)
+
+Block::Block(uint32_t nIndexIn, const string &sDataFrom, const string &sDataTo) : _nIndex(nIndexIn), sFrom(sDataFrom), sTo(sDataTo)
 {
-    _nNonce = 0;
+    _nNonce = 0;//minimum integer concatenated to the string to set 4 0's in the hash. ProofOfWork: if its gets 4 zeroes, nNonce is fixed
     _tTime = time(nullptr);
 
     sHash = _CalculateHash();
@@ -28,14 +27,19 @@ void Block::MineBlock(uint32_t nDifficulty)
         sHash = _CalculateHash();
     }
     while (sHash.substr(0, nDifficulty) != str);
-
-    cout << "Block mined: " << sHash << endl;
+    {
+        cout << "Block mined: " << "FROM " << sFrom << " " << "TO " << sTo << " " << sHash << endl;
+        my_writer.updateHash(_nIndex, sHash, sFrom, sTo);
+    }
+    
 }
 
 inline string Block::_CalculateHash() const
 {
     stringstream ss;
-    ss << _nIndex << sPrevHash << _tTime << _sData << _nNonce;
-
-    return sha256(ss.str());
+    ss << _nIndex << sPrevHash << _tTime << sFrom << sTo << _nNonce;
+    string hash = sha256(ss.str());
+    return hash;
 }
+
+
