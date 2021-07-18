@@ -1,11 +1,9 @@
-
-
 #include "Blockchain.h"
 
 Blockchain::Blockchain()
 {
-    _vChain.emplace_back(Block(0, "Genesis Block"));
-    _nDifficulty = 6;
+    _vChain.emplace_back(Block(0, "Genesis Block from", "Genesis Block to"));
+    _nDifficulty = 4; //4 5
 }
 
 void Blockchain::AddBlock(Block bNew)
