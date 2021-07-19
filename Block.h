@@ -25,7 +25,7 @@ public:
     Block(uint32_t nIndexIn, const string &sDataFrom, const string &sDataTo);
 
     void MineBlock(uint32_t nDifficulty);
-    //void updateHash(int id, string hash, string from, string to);
+   
 
 };
 
