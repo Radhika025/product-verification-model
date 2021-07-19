@@ -44,62 +44,56 @@ int main()
     
     CSVReader reader("test.csv");
     vector<vector<string> > dataList = reader.getData();
-    /*for(vector<string> pro_id : dataList)
+    cout<<"List of Product IDs\n";
+    for(vector<string> pro_id : dataList)
     {
         for(string data : pro_id)
         {
-            cout<<data << " ";
+            cout<<data << "\n";
         }
         cout<<endl;
-    }*/
+    }
     
-    CSVReader reader1("blocknumber.csv");
-    vector<vector<string> > pro_name = reader1.getData();
-    /*for(vector<string> vec1 : pro_name)
-    {
-        for(string data : vec1)
-        {
-            cout<<data<< " ";
-        }
-        cout<<endl;
-    }*/
-
     CSVReader reader2("manufacturer.csv");
     vector<vector<string> > manuname = reader2.getData();
-    /*for(vector<string> vec2 : manuname)
+    cout<<"List of Manufacturers\n";
+    for(vector<string> vec2 : manuname)
     {
         for(string data : vec2)
         {
-            cout<<data << " ";
+            cout<<data << "\n";
         }
         cout<<endl;
-    }*/
+    }
 
     CSVReader reader3("retailer.csv");
     vector<vector<string> > retailname = reader3.getData();
-    /*for(vector<string> vec3 : retailname)
+    cout<<"List of Retailers\n";
+    for(vector<string> vec3 : retailname)
     {
         for(string data : vec3)
         {
-            cout<<data << " ";
+            cout<<data << "\n";
         }
         cout<<endl;
-    }*/
+    }
 
     CSVReader reader4("wholesaler.csv");
     vector<vector<string> > wholesalername = reader4.getData();
-    /*for(vector<string> vec4 : wholesalername)
+    cout<<"List of Wholesalers\n";
+    for(vector<string> vec4 : wholesalername)
     {
         for(string data : vec4)
         {
-            cout<<data << " ";
+            cout<<data << "\n";
         }
         cout<<endl;
-    }*/
+    }
 
     
     CSVReader reader5("transaction.csv");
     vector<vector<string> > txnname = reader5.getData();
+    cout<<"Transactions\n";
     for(vector<string> vec5 : txnname)
     {
         for(string data : vec5)

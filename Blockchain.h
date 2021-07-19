@@ -1,4 +1,8 @@
 
+
+#ifndef TESTCHAIN_BLOCKCHAIN_H
+#define TESTCHAIN_BLOCKCHAIN_H
+
 #include <cstdint>
 #include <vector>
 #include "Block.h"
@@ -18,4 +22,4 @@ private:
     Block _GetLastBlock() const;
 };
 
-
+#endif //TESTCHAIN_BLOCKCHAIN_H

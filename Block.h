@@ -1,3 +1,7 @@
+
+#ifndef TESTCHAIN_BLOCK_H
+#define TESTCHAIN_BLOCK_H
+
 #include <cstdint>
 #include <iostream>
 #include <sstream>
@@ -25,8 +29,11 @@ public:
     Block(uint32_t nIndexIn, const string &sDataFrom, const string &sDataTo);
 
     void MineBlock(uint32_t nDifficulty);
-   
+    //void updateHash(int id, string hash, string from, string to);
 
+
+
+    
 };
 
-
+#endif //TESTCHAIN_BLOCK_H

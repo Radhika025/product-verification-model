@@ -4,7 +4,7 @@
 
 Block::Block(uint32_t nIndexIn, const string &sDataFrom, const string &sDataTo) : _nIndex(nIndexIn), sFrom(sDataFrom), sTo(sDataTo)
 {
-    _nNonce = 0;//minimum integer concatenated to the string to set 4 0's in the hash. ProofOfWork: if its gets 4 zeroes, nNonce is fixed
+    _nNonce = 0;
     _tTime = time(nullptr);
 
     sHash = _CalculateHash();
